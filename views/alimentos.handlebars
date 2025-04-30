@@ -1,0 +1,21 @@
+<h1>Lista de Alimentos</h1>
+<a href="/add-alimento" class="btn btn-primary mb-3">Adicionar Novo Alimento</a>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Quantidade</th>
+      <th>Descrição</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each alimentos}}
+      <tr>
+        <td>{{this.nome}}</td>
+        <td>{{this.quantidade}}</td>
+        <td>{{this.descricao}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

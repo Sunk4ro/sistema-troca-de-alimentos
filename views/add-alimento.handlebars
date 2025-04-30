@@ -1,0 +1,20 @@
+<h1>Adicionar Alimento</h1>
+<form action="/add-alimento" method="POST">
+  <div class="mb-3">
+    <label for="nome" class="form-label">Nome do alimento</label>
+    <input type="text" class="form-control" name="nome" id="nome" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="quantidade" class="form-label">Quantidade</label>
+    <input type="number" class="form-control" name="quantidade" id="quantidade" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="descricao" class="form-label">Descrição</label>
+    <textarea class="form-control" name="descricao" id="descricao" rows="3"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-success">Adicionar</button>
+  <a href="/alimentos" class="btn btn-secondary">Voltar</a>
+</form>
