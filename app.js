@@ -8,6 +8,9 @@ const sequelize = require('./db'); // conexão com o banco
 const app = express();
 const port = 3000;
 
+
+
+
 // Configurar Handlebars
 app.engine('handlebars', exphbs.engine({
   defaultLayout: 'main',
@@ -95,7 +98,10 @@ sequelize.sync()
     Usuario.findOne({ where: { email } })
       .then((usuario) => {
         if (usuario && bcrypt.compareSync(senha, usuario.senha)) {
-          req.session.usuarioId = usuario.id;  // Armazena o ID do usuário na sessão
+          req.session.usuario = {
+            id: usuario.id,
+            nome: usuario.nome
+          };  // Armazena o ID e o Nome do usuário na sessão
           res.redirect('/alimentos');  // Redireciona para a página de alimentos após o login
         } else {
           res.send('Credenciais inválidas');
